@@ -112,149 +112,75 @@
             z-index: 2;
         }
         
-        .game-cabinet {
-            width: 120px;
-            height: 160px;
-            background: linear-gradient(45deg, #2a2a2a, #4a4a4a);
-            border-radius: 10px 10px 0 0;
-            position: relative;
+        .game-image-container {
+            width: 200px;
+            height: 300px;
+            border-radius: 15px;
+            overflow: hidden;
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
             transition: all 0.3s ease;
             animation: float 6s ease-in-out infinite;
+            position: relative;
         }
         
-        .game-cabinet:nth-child(2) {
+        .game-image-container:nth-child(2) {
             animation-delay: -2s;
         }
         
-        .game-cabinet:nth-child(3) {
+        .game-image-container:nth-child(3) {
             animation-delay: -4s;
         }
         
-        .game-cabinet:hover {
-            transform: scale(1.1);
+        .game-image-container:hover {
+            transform: scale(1.05);
             box-shadow: 0 15px 40px rgba(76, 205, 196, 0.3);
         }
         
-        .game-screen {
-            width: 80px;
-            height: 60px;
-            background: #000;
-            border: 3px solid #333;
-            border-radius: 5px;
-            margin: 15px auto 10px;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .game-image {
+        .game-placeholder {
             width: 100%;
             height: 100%;
-            background-size: cover;
-            background-position: center;
-            border-radius: 2px;
-        }
-        
-        .ms-pacman {
-            background: radial-gradient(circle, #ffff00 30%, #000 31%);
-            position: relative;
-        }
-        
-        .ms-pacman::before {
-            content: '';
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            width: 8px;
-            height: 8px;
-            background: #ff69b4;
-            border-radius: 50%;
-        }
-        
-        .ms-pacman::after {
-            content: '• • • •';
-            position: absolute;
-            top: 35px;
-            left: 5px;
-            color: #ffff00;
-            font-size: 8px;
-            letter-spacing: 8px;
-        }
-        
-        .street-fighter {
-            background: linear-gradient(45deg, #ff4444, #0066cc);
-            position: relative;
+            background: linear-gradient(135deg, #2a2a2a 0%, #4a4a4a 100%);
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            color: white;
+            color: #4ecdc4;
             font-weight: bold;
-            font-size: 8px;
-        }
-        
-        .street-fighter::before {
-            content: 'RYU';
-            position: absolute;
-            top: 10px;
-            left: 5px;
-            font-size: 6px;
-        }
-        
-        .street-fighter::after {
-            content: 'VS';
-            font-size: 12px;
-        }
-        
-        .rampage {
-            background: linear-gradient(to bottom, #87ceeb 0%, #87ceeb 30%, #228b22 30%, #228b22 70%, #8b4513 70%);
+            font-size: 1.2rem;
+            text-align: center;
             position: relative;
         }
         
-        .rampage::before {
-            content: '🏢';
+        .game-placeholder::before {
+            content: '';
             position: absolute;
-            bottom: 5px;
-            left: 10px;
-            font-size: 12px;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://via.placeholder.com/500x1000/2a2a2a/4ecdc4?text=MS.+PAC-MAN') center/cover;
         }
         
-        .rampage::after {
-            content: '🦍';
-            position: absolute;
-            top: 20px;
-            right: 10px;
-            font-size: 10px;
+        .game-placeholder.street-fighter::before {
+            background: url('https://via.placeholder.com/500x1000/ff4444/ffffff?text=STREET+FIGHTER+II') center/cover;
         }
         
-        .game-controls {
-            display: flex;
-            justify-content: center;
-            gap: 8px;
-            margin-bottom: 10px;
-        }
-        
-        .joystick {
-            width: 12px;
-            height: 12px;
-            background: #ff4444;
-            border-radius: 50%;
-            border: 2px solid #333;
-        }
-        
-        .button {
-            width: 8px;
-            height: 8px;
-            background: #4444ff;
-            border-radius: 50%;
-            border: 1px solid #333;
+        .game-placeholder.rampage::before {
+            background: url('https://via.placeholder.com/500x1000/228b22/ffffff?text=RAMPAGE') center/cover;
         }
         
         .game-title {
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            right: 0;
             text-align: center;
-            font-size: 10px;
+            font-size: 12px;
             color: #4ecdc4;
             font-weight: bold;
-            margin-top: 8px;
+            background: rgba(0,0,0,0.7);
+            padding: 8px;
+            backdrop-filter: blur(5px);
         }
         
         .hero h1 {
@@ -444,9 +370,15 @@
             background: rgba(255,255,255,0.02);
         }
         
-        .pricing-card {
-            max-width: 400px;
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            max-width: 900px;
             margin: 0 auto;
+        }
+        
+        .pricing-card {
             background: rgba(255,255,255,0.05);
             padding: 40px;
             border-radius: 20px;
@@ -455,6 +387,12 @@
             border: 2px solid rgba(76, 205, 196, 0.3);
             position: relative;
             overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(76, 205, 196, 0.2);
         }
         
         .pricing-card::before {
@@ -467,6 +405,28 @@
             background: conic-gradient(from 0deg, transparent, rgba(76, 205, 196, 0.1), transparent);
             animation: rotate 4s linear infinite;
             pointer-events: none;
+        }
+        
+        .pricing-card.premium {
+            border: 2px solid rgba(255, 107, 107, 0.5);
+            background: rgba(255,255,255,0.08);
+        }
+        
+        .pricing-card.premium::before {
+            background: conic-gradient(from 0deg, transparent, rgba(255, 107, 107, 0.15), transparent);
+        }
+        
+        .popular-badge {
+            position: absolute;
+            top: -10px;
+            right: 20px;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            z-index: 3;
         }
         
         @keyframes rotate {
@@ -519,37 +479,29 @@
                 gap: 20px;
             }
             
-            .game-cabinet {
-                width: 80px;
-                height: 110px;
-            }
-            
-            .game-screen {
-                width: 55px;
-                height: 40px;
-                margin: 10px auto 8px;
+            .game-image-container {
+                width: 120px;
+                height: 180px;
             }
             
             .game-title {
-                font-size: 8px;
-                margin-top: 5px;
+                font-size: 10px;
+            }
+            
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
             }
         }
         
         @media (max-width: 1024px) {
             .hero-games {
-                right: 2%;
-                gap: 20px;
+                gap: 30px;
             }
             
-            .game-cabinet {
-                width: 100px;
-                height: 140px;
-            }
-            
-            .game-screen {
-                width: 70px;
-                height: 50px;
+            .game-image-container {
+                width: 160px;
+                height: 240px;
             }
         }
     </style>
@@ -573,39 +525,20 @@
                 <h1>Arcade Legends<br>Delivered Home</h1>
                 
                 <div class="hero-games">
-                    <div class="game-cabinet">
-                        <div class="game-screen">
-                            <div class="game-image ms-pacman"></div>
-                        </div>
-                        <div class="game-controls">
-                            <div class="joystick"></div>
-                            <div class="button"></div>
-                            <div class="button"></div>
+                    <div class="game-image-container">
+                        <div class="game-placeholder">
                         </div>
                         <div class="game-title">MS. PAC-MAN</div>
                     </div>
                     
-                    <div class="game-cabinet">
-                        <div class="game-screen">
-                            <div class="game-image street-fighter"></div>
-                        </div>
-                        <div class="game-controls">
-                            <div class="joystick"></div>
-                            <div class="button"></div>
-                            <div class="button"></div>
-                            <div class="button"></div>
+                    <div class="game-image-container">
+                        <div class="game-placeholder street-fighter">
                         </div>
                         <div class="game-title">STREET FIGHTER II</div>
                     </div>
                     
-                    <div class="game-cabinet">
-                        <div class="game-screen">
-                            <div class="game-image rampage"></div>
-                        </div>
-                        <div class="game-controls">
-                            <div class="joystick"></div>
-                            <div class="button"></div>
-                            <div class="button"></div>
+                    <div class="game-image-container">
+                        <div class="game-placeholder rampage">
                         </div>
                         <div class="game-title">RAMPAGE</div>
                     </div>
@@ -696,35 +629,40 @@
 
     <section id="pricing" class="pricing">
         <div class="container">
-            <h2 class="section-title">Start Your Arcade Adventure</h2>
-            <div class="pricing-card">
-                <h3>Basic Arcade Subscription</h3>
-                <div class="price">$149<span style="font-size: 1rem;">/month</span></div>
-                <ul class="price-details">
-                    <li>✅ Full-size arcade cabinet</li>
-                    <li>✅ Game swap every 3 months</li>
-                    <li>✅ Free delivery & setup</li>
-                    <li>✅ All maintenance included</li>
-                    <li>✅ 24/7 customer support</li>
-                    <li>✅ Mobile app control</li>
-                    <li>✅ Cancel anytime</li>
-                </ul>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLScCk0guQk4kNTwm6Z33Amw5akW4jE-y-Wdd8c29nw4TZgUwbg/viewform?usp=header" class="cta-button" onclick="alert('Welcome to Level Up! Our team will contact you within 24 hours to schedule your first arcade delivery.')">Put me on the Waiting List</a>
-            </div>
-        </br>
-            <div class="pricing-card">
-                <h3>Premium Arcade Subscription</h3>
-                <div class="price">$249<span style="font-size: 1rem;">/month</span></div>
-                <ul class="price-details">
-                    <li>✅ Full-size arcade cabinet</li>
-                    <li>✅ Game swap every 3 months</li>
-                    <li>✅ Free delivery & setup</li>
-                    <li>✅ All maintenance included</li>
-                    <li>✅ 24/7 customer support</li>
-                    <li>✅ Mobile app control</li>
-                    <li>✅ Cancel anytime</li>
-                </ul>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLScCk0guQk4kNTwm6Z33Amw5akW4jE-y-Wdd8c29nw4TZgUwbg/viewform?usp=header" class="cta-button" onclick="alert('Welcome to Level Up! Our team will contact you within 24 hours to schedule your first arcade delivery.')">Put me on the Waiting List</a>
+            <h2 class="section-title">Choose Your Arcade Adventure</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Classic Arcade Subscription</h3>
+                    <div class="price">$149<span style="font-size: 1rem;">/month</span></div>
+                    <ul class="price-details">
+                        <li>✅ Full-size arcade cabinet</li>
+                        <li>✅ Game swap every 3 months</li>
+                        <li>✅ Free delivery & setup</li>
+                        <li>✅ Basic maintenance included</li>
+                        <li>✅ Email customer support</li>
+                        <li>✅ Mobile app control</li>
+                        <li>✅ Cancel anytime</li>
+                    </ul>
+                    <a href="#" class="cta-button" onclick="alert('Welcome to Level Up Classic! Our team will contact you within 24 hours to schedule your first arcade delivery.')">Start Classic Plan</a>
+                </div>
+                
+                <div class="pricing-card premium">
+                    <div class="popular-badge">Most Popular</div>
+                    <h3>Premium Arcade Subscription</h3>
+                    <div class="price">$249<span style="font-size: 1rem;">/month</span></div>
+                    <ul class="price-details">
+                        <li>✅ Full-size arcade cabinet</li>
+                        <li>✅ Game swap every 3 months</li>
+                        <li>✅ Free delivery & setup</li>
+                        <li>✅ Priority maintenance & repairs</li>
+                        <li>✅ 24/7 phone & chat support</li>
+                        <li>✅ Mobile app with game requests</li>
+                        <li>✅ Early access to new arrivals</li>
+                        <li>✅ Free extra swap per year</li>
+                        <li>✅ Cancel anytime</li>
+                    </ul>
+                    <a href="#" class="cta-button" onclick="alert('Welcome to Level Up Premium! Our team will contact you within 24 hours to schedule your first arcade delivery.')">Start Premium Plan</a>
+                </div>
             </div>
         </div>
     </section>
@@ -771,3 +709,4 @@
     </script>
 </body>
 </html>
+
