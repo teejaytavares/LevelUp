@@ -158,15 +158,15 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('https://via.placeholder.com/500x1000/2a2a2a/4ecdc4?text=MS.+PAC-MAN') center/cover;
+            background: url('images/restored_ms_pacman_arcade_game-500x945.jpg') center/cover;
         }
         
         .game-placeholder.street-fighter::before {
-            background: url('https://via.placeholder.com/500x1000/ff4444/ffffff?text=STREET+FIGHTER+II') center/cover;
+            background: url('images/street_fighter_2_champion_edition_arcade_game-500x978.jpg') center/cover;
         }
         
         .game-placeholder.rampage::before {
-            background: url('https://via.placeholder.com/500x1000/228b22/ffffff?text=RAMPAGE') center/cover;
+            background: url('images/Rampage-arcade.gif') center/cover;
         }
         
         .game-title {
@@ -637,7 +637,6 @@
                     <ul class="price-details">
                         <li>✅ Full-size arcade cabinet</li>
                         <li>✅ Game swap every 3 months</li>
-                        <li>✅ Free delivery & setup</li>
                         <li>✅ Basic maintenance included</li>
                         <li>✅ Email customer support</li>
                         <li>✅ Mobile app control</li>
@@ -658,7 +657,6 @@
                         <li>✅ 24/7 phone & chat support</li>
                         <li>✅ Mobile app with game requests</li>
                         <li>✅ Early access to new arrivals</li>
-                        <li>✅ Free extra swap per year</li>
                         <li>✅ Cancel anytime</li>
                     </ul>
                     <a href="#" class="cta-button" onclick="alert('Welcome to Level Up Premium! Our team will contact you within 24 hours to schedule your first arcade delivery.')">Start Premium Plan</a>
@@ -709,3 +707,5 @@
     </script>
 </body>
 </html>
+
+
